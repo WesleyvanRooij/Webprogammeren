@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+		<title>Functionaliteit 2.1</title>
+</head>
+<body>
+		<form id="inlogForm" name="inlogForm">
+		<label for="invoer">Maak hier een account aan!</label>
+
+
+		<input type="file" onchange="function()"id="foto" name="foto" placeholder="Voeg hier een afbeelding toe">
+		<input type="text" id="echtenaam" name="echtenaam" placeholder="Wat is uw naam?">
+		<input type="text" id="achternaam" name="achternaam" placeholder="Wat is uw achternaam?">
+		
+		<input type="text" id="gebruikersnaam" name="gebruikersnaam" placeholder="voer uw gebruikersnaam in">
+		<input type="password" id="wachtwoord" name="wachtwoord" placeholder="voer uw wachtwoord in">
+		<input type="password" id="bevestigwachtwoord" name="bevestigwachtwoord" placeholder="bevestig uw wachtwoord">
+
+		<input type="button" value="Maak account aan" onclick="nieuwAccountScherm()">
+<form>
+
+
+
+<p id="fout">
+
+	<script>
+	//Op deze pagina kan een gebruiker een profiel pagina aanmaken. De volgende elementen moeten aanwezig zijn:
+//1.	Voornaam
+//2.	Achternaam
+//3.	Gebruikersnaam
+//4.	Wachtwoord
+//5.	Wachtwoord herhaling
+//6.	Foto van de gebruiker
+
+var nieuwAccountScherm = function(){
+		var foto = document.getElementById("foto").value; 
+		var echtenaam = document.getElementById("echtenaam").value;
+		var achternaam = document.getElementById("achternaam").value;
+		var gebruikersnaam = document.getElementById("gebruikersnaam").value;
+		var wachtwoord = document.getElementById("wachtwoord").value;
+		var bevestigwachtwoord = document.getElementById("bevestigwachtwoord").value; 
+
+
+if (echtenaam === "" && achternaam === "" && gebruikersnaam === "" && wachtwoord === "" && bevestigwachtwoord === "" && foto === "") { document.getElementById("fout").innerHTML ="U heeft nog niks ingevuld";
+	}
+else {window.location.href = "../functionaliteiten/functionaliteit1.4.html" ;
+	}
+
+//else if (gebruikersnaam === "" && wachtwoord === "" ) { document.getElementById("fout").innerHTML ="U heeft nog geen wachtwoord ingevuld";
+	
+//else { document.getElementById("fout").innerHTML ="U heeft nog geen gebruikersnaam ingevuld";
+	
+
+}
+
+
+
+
+
+
+</script>
+
+</body>
+
+</html>
