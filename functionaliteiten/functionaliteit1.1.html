@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+		<title>Functionaliteit 1.1</title>
+</head>
+<body>
+
+<form id="inlogForm" name="inlogForm">
+		<label for="invoer">Voor uw gebruikersnaam en wachtwoord in?</label>
+		
+		<input type="text" id="gebruikersnaam" name="gebruikersnaam" placeholder="voer uw gebruikersnaam in">
+		<input type="password" id="wachtwoord" name="wachtwoord" placeholder="voer uw wachtwoord in">
+
+		<input type="button" value="log in" onclick="inlogScherm()">
+
+
+
+<form>
+
+		<p id="fout">
+
+		
+		
+	
+		<script> 
+
+		var inlogScherm = function(){
+
+		var gebruikersnaam = document.getElementById("gebruikersnaam").value;
+		var wachtwoord = document.getElementById("wachtwoord").value;
+
+		
+	if (gebruikersnaam === "Wesley" && wachtwoord === "wachtwoord" ) {window.location.href = "../functionaliteiten/functionaliteit1.4.html" ;
+	}
+
+
+
+	else {document.getElementById("fout").innerHTML = "Gebruikersnaam of wachtwoord is incorrect";
+	}
+	
+
+	}
+
+
+		</script>
+	</body>
+</html>
