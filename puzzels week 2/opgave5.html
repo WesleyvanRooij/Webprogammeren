@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+		<title>opgave 5</title>
+</head>
+<body>
+	<form>
+	<label for="invoer">Voer euro in</label>
+		
+	<input type="text" id="valuta" name="valuta" placeholder="voer het aantal euro's in VB(20,3)">
+	
+
+
+	<input type="button" value="knop" onclick="rekenValuta()"/>
+
+
+	<form>
+
+	<p id="bedrag">
+
+		<script> 
+		var rekenValuta = function(){
+		var valuta = getElementById("valuta").value;
+		var amerikaanseDollars = parseInt(valuta) * 1.08;
+		var mexicaansePeso = parseInt(valuta) * 18.06;
+		var japanseYens =parseInt(valuta) * 132.04;
+		var britsePond = parseInt(valuta) * 0.71;
+
+		document.getElementById("bedrag").innerHTML
+
+
+		
+
+
+
+
+
+
+		};
+
+//1.	Schrijf een programma die de euro omzet naar een vreemde valuta. 
+//2.	Maak hiervoor een formulier en schrijf het weg op het scherm (dus geen prompt() en alert())
+//3.	In totaal zijn er 4 valuta’s:
+//•	Amerikaanse Dollar (1 Euro = 1.08 Dollars)
+//•	Mexicaanse Peso (1 Euro = 18.06 Pesos)
+//•	Japanse Yen (1 Euro = 132.04 Yen)
+//•	Britse Pond (1 Euro = 0.71 Pond)
+
+
+		
+
+
+
+		
+		</script>
+</body>
+</html>
