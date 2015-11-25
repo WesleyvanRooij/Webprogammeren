@@ -4,23 +4,34 @@
 		<title>Opgave 1</title>
 </head>
 <body>
+	<form>
+	<label for="invoer">Voer 2 woorden in</label>
+		
+	<input type="text" id="woord1" name="woord1" placeholder="voer het eerste woord in">
+	<input type="text" id="woord2" name="woord2" placeholder="voer het tweede woord in">
+
 
 	<input type="button" value="knop" onclick="vergelijkWoorden()"/>
+
+
+	<form>
+
+	<p id="melding">
 
 
 	<script>
 
 	var vergelijkWoorden = function(){
 	
-	var woord1 = prompt("Wat is het eerste woord?");
-	var woord2 = prompt("Wat is het tweede woord?");
+	var woord1 = document.getElementById("woord1").value;
+	var woord2 = document.getElementById("woord2").value;
 
-	if(woord1.length > woord2.length){alert("woord 1 is langer en bevat " + woord1.length + " letters." );}
+	if(woord1.length > woord2.length) {document.getElementById("melding").innerHTML = "woord 1 is langer en bevat " + woord1.length + " letters." ;}
 
 
 
 	
-	else{alert("woord 2 is langer en bevat " + woord2.length + " letters.");}
+	else{document.getElementById("melding").innerHTML = "woord 2 is langer en bevat " + woord2.length + " letters.";}
 
 }
 
