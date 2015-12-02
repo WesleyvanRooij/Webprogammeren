@@ -1,6 +1,10 @@
 <!DOCTYPE html>
 <html>
 <head>
+	<meta charset="UTF-8">
+	<meta name="robots" content="noindex, nofollow">
+	<meta name="author" content="Wesley van Rooij">
+	<meta name="description" content="HU schoolopdracht webvaardigheden">
 		<title>functionaliteit 2.2</title>
 </head>
 
@@ -8,13 +12,13 @@
 <link rel="stylesheet" type="text/css" href="../css/stylesheet.css">
 
 
+<body id="accountAanmaken">
 
-<body>
-		<form id="inlogForm" name="inlogForm">
+
+		<form id="nieuwAccountForm" name="nieuwAccountForm">
 		<label for="invoer">Maak hier een account aan!</label>
 		
 		
-		<input  type="file" onchange="function()" id="foto" name="foto"  >
 
 
 		
@@ -27,15 +31,15 @@
 		<input type="password" id="bevestigwachtwoord" name="bevestigwachtwoord" placeholder="bevestig uw wachtwoord">
 
 		<input id="button"type="button" value="Maak account aan" onclick="nieuwAccountScherm()">
-<form>
+		<p id="fout">
+</form>
 
-<p id="fout">
+
 
 	
 		<script> 
 		
 		var nieuwAccountScherm = function(){
-		var foto = document.getElementById("foto").value; 
 		var echtenaam = document.getElementById("echtenaam").value;
 		var achternaam = document.getElementById("achternaam").value;
 		var gebruikersnaam = document.getElementById("gebruikersnaam").value;
@@ -45,44 +49,48 @@
 
 
 
-if (echtenaam === "" && achternaam === "" && gebruikersnaam === "" && wachtwoord === "" && bevestigwachtwoord === "" && foto === "") { document.getElementById("fout").innerHTML ="U heeft nog niks ingevuld";
-	}
-else if (echtenaam === echtenaam && achternaam === "" && gebruikersnaam === "" && wachtwoord === "" && bevestigwachtwoord === "" && foto === "") { document.getElementById("fout").innerHTML ="U heeft nog geen achternaam, gebruikersnaam, wachtwoord ingevuld en geen foto gekozen.";
-	}
-else if (echtenaam === echtenaam && achternaam === achternaam && gebruikersnaam === "" && wachtwoord === "" && bevestigwachtwoord === "" && foto === "") { document.getElementById("fout").innerHTML ="U heeft nog geen gebruikersnaam, wachtwoord ingevuld en geen foto gekozen.";
-	}
-else if (echtenaam === echtenaam && achternaam === achternaam && gebruikersnaam === gebruikersnaam && wachtwoord === "" && bevestigwachtwoord === "" && foto === "") { document.getElementById("fout").innerHTML ="U heeft nog geen wachtwoord ingevuld en geen foto gekozen.";
-	}
-
-else if (echtenaam === echtenaam && achternaam === achternaam && gebruikersnaam === gebruikersnaam && wachtwoord === wachtwoord && bevestigwachtwoord === "" && foto === "") { document.getElementById("fout").innerHTML ="U heeft het wachtwoord nog niet bevestigd en geen foto gekozen.";
-	}
-else if (echtenaam === echtenaam && achternaam === achternaam && gebruikersnaam === gebruikersnaam && wachtwoord === wachtwoord && bevestigwachtwoord === bevestigwachtwoord && foto === "") { document.getElementById("fout").innerHTML ="U heeft nog geen foto gekozen.";
-	}
-else if (echtenaam === "" && achternaam === "" && gebruikersnaam === "" && wachtwoord === "" && bevestigwachtwoord === "" && foto === foto) { document.getElementById("fout").innerHTML ="U heeft nog geen voornaam, achternaam, gebruikersnaam, wachtwoord ingevuld.";
-	}
-
-else if (echtenaam === "" && achternaam === "" && gebruikersnaam === "" && wachtwoord === wachtwoord && bevestigwachtwoord === bevestigwachtwoord && foto === foto) { document.getElementById("fout").innerHTML ="U heeft nog geen voornaam, achternaam, gebruikersnaam ingevuld.";
-	}
-
-else if (echtenaam === "" && achternaam === "" && gebruikersnaam === gebruikersnaam && wachtwoord === wachtwoord && bevestigwachtwoord === bevestigwachtwoord && foto === foto) { document.getElementById("fout").innerHTML ="U heeft nog geen voornaam, achternaam ingevuld.";
-	}
-else if (echtenaam === "" && achternaam === achternaam && gebruikersnaam === gebruikersnaam && wachtwoord === wachtwoord && bevestigwachtwoord === bevestigwachtwoord && foto === foto) { document.getElementById("fout").innerHTML ="U heeft nog geen voornaam ingevuld.";
-	}
-else if (echtenaam === echtenaam && achternaam === "" && gebruikersnaam === "" && wachtwoord ==="" && bevestigwachtwoord === "" && foto === foto) { document.getElementById("fout").innerHTML ="U heeft nog geen achternaam , gebruikersnaam en wachtwoord ingevuld.";
-	}
-else if (echtenaam === echtenaam && achternaam === "" && gebruikersnaam === "" && wachtwoord ===wachtwoord && bevestigwachtwoord === bevestigwachtwoord && foto === foto) { document.getElementById("fout").innerHTML ="U heeft nog geen achternaam en gebruikersnaam ingevuld.";
-	}
-else if (echtenaam === echtenaam && achternaam === achternaam && gebruikersnaam === gebruikersnaam && wachtwoord === "" && bevestigwachtwoord === "" && foto === "") { document.getElementById("fout").innerHTML ="U heeft nog geen wachtwoord en foto ingevuld.";
-	}
 
 
 
-
-
-
-
-else {window.location.href = "../functionaliteiten/functionaliteit1.4.html" ;
+if (echtenaam === "" ) { document.getElementById("fout").innerHTML ="U heeft nog geen naam ingevuld";
 	}
+
+else { document.getElementById("fout").innerHTML ="";
+	}
+
+if (achternaam === "" ){ document.getElementById("fout").innerHTML ="U heeft nog geen achternaam ingevuld.";
+	}
+
+else  { document.getElementById("fout").innerHTML ="";
+	}
+
+
+if (gebruikersnaam === "" || "Hekman" || "Koning"|| "ErikHekman"|| "ThijsWaardenburg"|| "Ronald of RonaldVanEssen" || "Wesley") { document.getElementById("fout").innerHTML ="Gebruikersnaam is niet ingevuld of al in gebruik";
+	}
+
+
+else  { document.getElementById("fout").innerHTML ="";
+	}
+
+if (wachtwoord === "" ) { document.getElementById("fout").innerHTML ="Wachtwoord ingevuld.";
+	}
+
+else { document.getElementById("fout").innerHTML ="";
+	}
+
+if (bevestigwachtwoord === "" ) { document.getElementById("fout").innerHTML ="U heeft het wachtwoord nog niet bevestigd.";
+	}
+
+else  { document.getElementById("fout").innerHTML ="";
+	}
+
+if (wachtwoord !== bevestigwachtwoord){ document.getElementById("fout").innerHTML ="De wachtwoorden komen niet overeen";
+	}
+else {window.location.href = "../functionaliteiten/functionaliteit1.4.html";}
+
+
+
+	
 
 
 }
@@ -94,5 +102,7 @@ else {window.location.href = "../functionaliteiten/functionaliteit1.4.html" ;
 
 		
 		</script>
+
 </body>
+
 </html>
