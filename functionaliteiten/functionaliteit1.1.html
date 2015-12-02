@@ -1,29 +1,38 @@
 <!DOCTYPE html>
 <html>
 <head>
+	<meta charset="UTF-8">
+	<meta name="robots" content="noindex, nofollow">
+	<meta name="author" content="Wesley van Rooij">
+	<meta name="description" content="HU schoolopdracht webvaardigheden">
 		<title>Functionaliteit 1.1</title>
 </head>
+
+<link rel="stylesheet" type="text/css" href="../css/stylesheet.css">
+
 <body>
 
+<h1>Sporten4Fun</h1>
 <form id="inlogForm" name="inlogForm">
 		
-		<label for="invoer">Voer uw gebruikersnaam en wachtwoord in?</label>
+		<label for="invoer">Voer uw gebruikersnaam en wachtwoord in</label>
 		
 		<input type="text" id="gebruikersnaam" name="gebruikersnaam" placeholder="voer uw gebruikersnaam in">
 		<input type="password" id="wachtwoord" name="wachtwoord" placeholder="voer uw wachtwoord in">
 
-		<input type="button" value="log in" onclick="inlogScherm()">
 
+		
 
-
-<form>
-
+		<input id="button" type="button" value="log in" onclick="inlogScherm()">
 		<p id="fout">
+		
 
-		
-		
-	
+
+
+</form>
+
 		<script> 
+
 
 		var inlogScherm = function(){
 
@@ -42,7 +51,9 @@
 
 	}
 
-
 		</script>
+
+	<a href="../functionaliteiten/functionaliteit2.2.html"><p>Klik hier om een account aan te maken.</p></a>
+	
 	</body>
 </html>
