@@ -24,14 +24,22 @@
 		
 		
 		<input type="text" id="echtenaam" name="echtenaam" placeholder="Wat is uw naam?">
+		<p id="echtenaamFout"></p>
+
 		<input type="text" id="achternaam" name="achternaam" placeholder="Wat is uw achternaam?">
+		<p id="achternaamFout"></p>
 		
 		<input type="text" id="gebruikersnaam" name="gebruikersnaam" placeholder="voer uw gebruikersnaam in">
+		<p id="gebruikersnaamFout"></p>
+
 		<input type="password" id="wachtwoord" name="wachtwoord" placeholder="voer uw wachtwoord in">
+		<p id="wachtwoordFout"></p>
+
 		<input type="password" id="bevestigwachtwoord" name="bevestigwachtwoord" placeholder="bevestig uw wachtwoord">
+		<p id="wachtwoordCheckFout"></p>
 
 		<input id="button"type="button" value="Maak account aan" onclick="nieuwAccountScherm()">
-		<p id="fout">
+		
 </form>
 
 
@@ -52,47 +60,46 @@
 
 
 
-if (echtenaam === "" ) { document.getElementById("fout").innerHTML ="U heeft nog geen naam ingevuld";
+if (echtenaam === "" ) { document.getElementById("echtenaamFout").innerHTML ="U heeft nog geen naam ingevuld";
 	}
 
-else { document.getElementById("fout").innerHTML ="";
-	}
-
-if (achternaam === "" ){ document.getElementById("fout").innerHTML ="U heeft nog geen achternaam ingevuld.";
-	}
-
-else  { document.getElementById("fout").innerHTML ="";
+else { document.getElementById("echtenaamFout").innerHTML ="";
 	}
 
 
-if (gebruikersnaam === "" || "Hekman" || "Koning"|| "ErikHekman"|| "ThijsWaardenburg"|| "Ronald of RonaldVanEssen" || "Wesley") { document.getElementById("fout").innerHTML ="Gebruikersnaam is niet ingevuld of al in gebruik";
+if (achternaam === "" ){ document.getElementById("achternaamFout").innerHTML ="U heeft nog geen achternaam ingevuld.";
+	}
+
+else  { document.getElementById("achternaamFout").innerHTML ="";
 	}
 
 
-else  { document.getElementById("fout").innerHTML ="";
+if (gebruikersnaam === "" || gebruikersnaam === "Hekman" || gebruikersnaam ==="Koning"|| gebruikersnaam ==="ErikHekman"||gebruikersnaam === "ThijsWaardenburg"|| gebruikersnaam ==="Ronald" || gebruikersnaam ==="RonaldVanEssen" ||gebruikersnaam === "Wesley") { document.getElementById("gebruikersnaamFout").innerHTML ="Gebruikersnaam is niet ingevuld of al in gebruik";
 	}
 
-if (wachtwoord === "" ) { document.getElementById("fout").innerHTML ="Wachtwoord ingevuld.";
+
+else  { document.getElementById("gebruikersnaamFout").innerHTML ="";
 	}
 
-else { document.getElementById("fout").innerHTML ="";
+if (wachtwoord === "" ) { document.getElementById("wachtwoordFout").innerHTML ="Wachtwoord is nog niet ingevuld.";
 	}
 
-if (bevestigwachtwoord === "" ) { document.getElementById("fout").innerHTML ="U heeft het wachtwoord nog niet bevestigd.";
+else { document.getElementById("wachtwoordFout").innerHTML ="";
 	}
 
-else  { document.getElementById("fout").innerHTML ="";
-	}
+if (bevestigwachtwoord === "" ) { 
+	document.getElementById("wachtwoordFout").innerHTML ="U heeft het wachtwoord nog niet bevestigd.";
+	} else  { 
+		document.getElementById("wachtwoordFout").innerHTML ="";
+		if (wachtwoord !== bevestigwachtwoord){
+			 document.getElementById("wachtwoordCheckFout").innerHTML ="De wachtwoorden komen niet overeen";
+			}
 
-if (wachtwoord !== bevestigwachtwoord){ document.getElementById("fout").innerHTML ="De wachtwoorden komen niet overeen";
-	}
-else {window.location.href = "../functionaliteiten/functionaliteit1.4.html";}
+else {
+	window.location.href = "../functionaliteiten/functionaliteit1.4.html";
+}
 
-
-
-	
-
-
+}
 }
 
 
