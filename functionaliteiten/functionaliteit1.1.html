@@ -13,6 +13,7 @@
 <body>
 
 <h1>Sporten4Fun</h1>
+
 <form id="inlogForm" name="inlogForm">
 		
 		<label for="invoer">Voer uw gebruikersnaam en wachtwoord in</label>
@@ -29,31 +30,61 @@
 
 
 
+
 </form>
+
+<p><a href="../functionaliteiten/functionaliteit2.2.html">Nog geen account?</a></p>
 
 		<script> 
 
-
-		var inlogScherm = function(){
-
-		var gebruikersnaam = document.getElementById("gebruikersnaam").value;
-		var wachtwoord = document.getElementById("wachtwoord").value;
-
 		
-	if (gebruikersnaam === "Wesley" && wachtwoord === "wachtwoord" ) {window.location.href = "../functionaliteiten/functionaliteit1.4.html" ;
-	}
-
-
-
-	else {document.getElementById("fout").innerHTML = "Gebruikersnaam of wachtwoord is incorrect";
-	}
-	
-
-	}
+		var mijnGebruikersnaam = "Wesley";
+		var mijnWachtwoord = "wachtwoord";
+		var attempt = 3;	
+		
+		function inlogScherm() {
+		var gebruikersnaam = document.getElementById('gebruikersnaam').value;
+		var wachtwoord = document.getElementById('wachtwoord').value;
+			
+			if(gebruikersnaam == ""){
+					document.getElementById('fout').innerHTML = "Voer een gebruikersnaam in!";
+				}else {
+					if(wachtwoord==""){
+						document.getElementById('fout').innerHTML = "Voer een wachtwoord in!";
+					} else {
+						if(gebruikersnaam== mijnGebruikersnaam){
+							if(wachtwoord== mijnWachtwoord){
+								window.location.href = "../functionaliteiten/functionaliteit1.4.html" ;
+						}
+						
+						else{
+						attempt --;// Decrementing by one.
+						alert("U heeft nog  "+attempt+" pogingen over.");
+						// zorgt dat het veld blokkeert na 3 verkeerde pogingen.
+						if( attempt == 0){
+						document.getElementById("gebruikersnaam").disabled = true;
+						document.getElementById("wachtwoord").disabled = true;
+						document.getElementById("login").disabled = true;
+						return false;
+						}
+						else {
+								document.getElementById('fout').innerHTML = "U heeft een verkeerde wachtwoord ingevuld";
+							}
+						} 
+						}else {
+							document.getElementById('fout').innerHTML = "U heeft een verkeerde gebruikersnaam ingevuld";
+						} 					
+						if  (gebruikersnaam == "ErikHekman" || gebruikersnaam == "Koning" || gebruikersnaam == "Hekman" || gebruikersnaam == "Ronald" || gebruikersnaam == "RonaldVanEssen") {
+							document.getElementById('fout').innerHTML = "Deze gebruikersnaam mag niet worden gebruikt"; }
+						}
+					}
+				}
+		
+					
 
 		</script>
 
-	<a href="../functionaliteiten/functionaliteit2.2.html"><p>Klik hier om een account aan te maken.</p></a>
+	
 	
 	</body>
 </html>
