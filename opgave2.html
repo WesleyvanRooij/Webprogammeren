@@ -1,0 +1,38 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Opgave 2</title>
+</head>
+<body>
+
+<form id="spaansGetal" name="Spaansgetal">
+		<label for="nummer">nummer:</label>
+		
+		<input type="number" id="nummer" name="nummer">
+		
+
+		<input type="button" value="vertaal" onclick="vertalen()" />
+	</form>
+	<p id="vertaald">
+
+<script>
+var spaans = ['uno','dos','tres','cuatro','cinco', 'seis', 'siete','ocho', 'nueve', 'diez'];
+
+var vertalen= function(){
+	getal = document.getElementById("nummer").value;
+	
+	if (getal ===  "1") {document.getElementById("vertaald").innerHTML = "Het spaanse getal voor "+ getal + " is "+ spaans};
+
+
+
+
+}
+
+
+	
+	
+</script>
+
+</body>
+</html>
