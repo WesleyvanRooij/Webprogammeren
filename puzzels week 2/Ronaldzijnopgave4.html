@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Opgave 4 - Welk woord is langer? - part 2</title>
+	<style>
+	/* css commentaar */
+	label, input { display: block;}
+	
+	input[type="button"]{margin-top:20px;}
+	</style>
+</head>
+<body>
+	<!-- Maak nu een formulier en gebruik jouw functie -->
+	<form>
+		<label for="woord1">Woord1:</label>
+		<input type="text" id="woord1" name="woord1">
+		
+		<label for="woord2">Woord2:</label>
+		<input type="text" id="woord2" name="woord2">	
+
+		<input type="button" value="woorden vergelijken" 
+		onclick="vergelijkWoorden()">
+	</form>
+
+	<script>
+	//voeg commentaar toe (in eigen woorden)
+	//document.write is niveau 2
+	//document.getElementById is nivea 3
+	//bij document.getElementById gaat hij opzoeken naar het ID die jij hebt gemaakt.
+	//.value omdat je de value van het invuld veld wilt
+	/// === zorgt ervoor dat de invoer van het zelfde type is (letters, getallen)
+	var vergelijkWoorden = function(){
+	
+		woord1 = document.getElementById('woord1').value;
+		woord2 = document.getElementById('woord2').value;
+	
+		if( woord1.length > woord2.length){
+	
+			document.write("<p>Woord1 is het langst en bevat " + woord1.length + " letters.</p>");
+		} else {
+	
+			document.write("<p>Woord2 is het langst en bevat " + woord2.length + " letters.</p>");
+		}
+	}
+	</script>
+</body>
+</html>

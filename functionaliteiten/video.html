@@ -1,0 +1,79 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Video (mp4-bestand) toevoegen aan tijdlijn</title>
+<script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
+<script>
+//bron(uit 2013): http://blog.teamtreehouse.com/reading-files-using-the-html5-filereader-api 
+$(document).ready(function() {
+    $(':file').change(function () {    
+        if(this.files[0]) {
+            var reader = new FileReader();
+            reader.onload = videoIsLoaded;
+            reader.readAsDataURL(this.files[0]);
+        }
+    });
+    function videoIsLoaded(e) {
+        $('#myVideo').attr('src', e.target.result);
+    };
+    var toevoegen = function(){
+        var invoer = $('#invoer').val();
+        if(invoer == ''){
+            alert("wel wat invullen heh");
+        } else {
+            //als de gebruiker een filmpje wil toevoegen (en de invoer dus niet leeg is):
+            if($('#fileInput').val() != ''){
+                var video = $('#myVideo').parent().html();
+                var uitvoer = '<div class="bericht">' + invoer + "<br>" + video + '</div>';
+            } else {
+                //anders alleen tekst toevoegen aan tijdlijn
+                var uitvoer = '<div class="bericht">' + invoer + '</div>';
+            }
+            $('#tijdlijn').prepend(uitvoer);
+            $('#fileInput').val('');
+            $('#invoer').val('');
+        }
+    }
+    $('#knop').on('click', function(){
+        toevoegen();
+    });
+    $('#invoer').on('keypress', function(event){
+        if(event.keyCode == 13){
+            toevoegen();
+        }
+    });
+});
+</script>
+<style>
+    .bericht{
+        background-color: #ccc;
+        width:400px;
+        margin-top:20px;
+        border-radius: 10px;
+        padding:5px;
+    }
+    #videoContainer{display:none;}
+    video{padding:5px;}
+    label{font-size: 80%;}
+</style>
+</head>
+<body>
+<div id="videoContainer">
+    <!-- de html voor video is verborgen met css -->
+    <video id="myVideo" width="320" height="240" controls>
+        <source src="" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+    <!-- en wordt alleen gebruikt om nieuwe video toe te voegen -->
+    <!-- (dit is gemakkelijker dan de html met js of jQuery aanmaken) -->
+</div>
+<label for="fileInput">Video (mp4) toevoegen:</label>
+<input type="file" id="fileInput" />
+<br>
+<input type="text" id="invoer" placeholder="tekst invoer" />
+<input type="button" id="knop" value="toevoegen" />
+<div id="tijdlijn"><!-- hier komen de berichten --></div>
+
+</body>
+</html>

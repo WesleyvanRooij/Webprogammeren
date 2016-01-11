@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>bles</title>
+   <link rel="stylesheet" type="text/css" href="../css/stylesheet.css">
+
+</head>
+<body>
+
+<h1>Boodschappenlijstje</h1>
+<input type="text" id="invoer" placeholder="wat heb je nodig?">
+<input type="button" id="knop" value="toevoegen">
+
+
+<ol id="menu">
+    <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque facilisis vel elit ut vestibulum. Nulla eget est non nulla molestie dapibus eu ut mi. Sed in ultrices dolor. Sed aliquam eros ante, sed hendrerit olor nec tortor venenatis, non pretium ligula auctor. Nam lobortis ex et eros convallis tincidunt. Phasellus convallis tincidunt lectus, in vulputate augue suscipit ac. Sed finibus bibendum risus, vitae viverra.
+    </li>
+
+    <input type="button" id="knop" value="reageren">
+
+    <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque facilisis vel elit ut vestibulum. Nulla eget est non nulla molestie dapibus eu ut mi. Sed in ultrices dolor. Sed aliquam eros ante, sed hendrerit ex lor nec tortor venenatis, non pretium ligula auctor. Nam lobortis ex et eros convallis tincidunt. Phasellus convallis tincidunt lectus, in vulputate augue suscipit ac. Sed finibus bibendum risus, vitae viverra.</li>
+    <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque facilisis vel elit ut vestibulum. Nulla eget est non nulla molestie dapibus eu ut mi. Sed in ultrices dolor. Sed aliquam eros ante, sed hendrerit ec tortor venenatis, non pretium ligula auctor. Nam lobortis ex et eros convallis tincidunt. Phasellus convallis tincidunt lectus, in vulputate augue suscipit ac. Sed finibus bibendum risus, vitae viverra.</li>
+</ol>
+
+<script>
+    var toevoegen = function () {
+       var invoer = document.getElementById('invoer');
+
+        var lijst =  document.getElementById('menu');
+        
+        
+        lijst.innerHTML = lijst.innerHTML + "<li>" + invoer.value + "</li>";
+        invoer.value = "";
+    };
+
+    document.getElementById('knop').onclick = function() {
+        toevoegen();
+    };
+
+    document.getElementById('invoer').onkeyup = function(event) {
+        if(event.keyCode == 13) {
+            toevoegen();
+        }
+    }
+
+</script>
+</body>
+</html>

@@ -1,18 +1,168 @@
-<!DOCTYPE html>
+<!doctype html>
 <html>
 <head>
-	<meta charset="UTF-8">
-	<meta name="robots" content="noindex, nofollow">
-	<meta name="author" content="Wesley van Rooij">
-	<meta name="description" content="HU schoolopdracht webvaardigheden">
-		<title>Vriendenlijst</title>
+  <meta charset="UTF-8">
+  <meta name="robots" content="noindex, nofollow">
+  <meta name="author" content="Wesley van Rooij">
+  <meta name="description" content="HU schoolopdracht webvaardigheden">
+    <meta charset = "UTF-8">
+    
+    
+    <script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
+    <script src="js/script.js"></script>
+
+    <link rel="stylesheet" type="text/css" href="../css/stylesheet.css">
+
+<link rel="stylesheet" href="lightbox/dist/css/lightbox.min.css">
 </head>
 
-<link rel="stylesheet" type="text/css" href="../css/stylesheet.css">
 
-<body>
 
-<h1>Vriendenlijst</h1>
+<div class="page">
+<nav> 
+  <ul>
 
+
+    <li><a href="../functionaliteiten/tijdlijn.html"> Home</a> </li>
+
+
+  <li><a href="../functionaliteiten/berichten.html">Berichten </a></li>
+  <li><a href="../functionaliteiten/vriendenlijst.html">Vrienden</a></li>
+
+  <li><a href="../functionaliteiten/index.html">Uitloggen</a></li>
+
+
+</ul>
+</nav>
+<img src="../images/panorama.jpg">
+
+<body id="vriendenlijst">
+
+<h2 class="vriendjes">Vrienden</h2>
+<div class="huidigeVrienden">
+
+
+
+  
+<ul>
+    <li>
+       <a class="example-image-link" href="lightbox/dist/images/kuytInfo.jpg" data-lightbox="example-1"><img class="example-image" src="lightbox/dist/images/kuyt.jpg" alt="image-1"  /></a> 
+
+      <div class="verwijder">
+        <p>verwijder</p>
+      </div>
+    </li>
+    <li>
+         <a class="example-image-link" href="lightbox/dist/images/vrouwInfo.jpg" data-lightbox="example-1"><img class="example-image" src="lightbox/dist/images/vrouw.jpg" alt="image-1"  /></a>  
+         <div class="verwijder">
+        <p>verwijder</p>
+      </div>
+    </li>
+    <li>
+       <a class="example-image-link" href="lightbox/dist/images/vanPersieInfo.jpg" data-lightbox="example-1"><img class="example-image" src="lightbox/dist/images/vanPersie.jpg" alt="image-1"  /></a>  
+         <div class="verwijder">
+        <p>verwijder</p>
+      </div>
+    </li>
+    <li>
+       <a class="example-image-link" href="lightbox/dist/images/costaInfo.jpg" data-lightbox="example-1"><img class="example-image" src="lightbox/dist/images/costa.jpg" alt="image-1"  /></a> 
+         <div class="verwijder">
+        <p>verwijder</p>
+      </div>
+    </li>
+</ul>
+</div>
+
+
+
+
+<h2 class="bijnavriendjes">Voorgestelde vrienden</h2>
+
+<div class="voorgesteldeVrienden">
+
+    
+
+  
+<ul>
+    <li>
+         <a class="example-image-link" href="lightbox/dist/images/özilInfo.jpg" data-lightbox="example-1"><img class="example-image" src="lightbox/dist/images/özil.jpg" alt="image-1"  /></a>  
+        
+         <div class="toevoegen">
+        <p>toevoegen</p>
+      </div>
+    </li>
+    <li>
+
+        <a class="example-image-link" href="lightbox/dist/images/ronaldoInfo.jpg" data-lightbox="example-1"><img class="example-image" src="lightbox/dist/images/ronaldo.jpg" alt="image-1"  /></a> 
+         <div class="toevoegen">
+        <p>toevoegen</p>
+      </div>
+    </li>
+    
+    <li>
+       <a class="example-image-link" href="lightbox/dist/images/messiInfo.jpg" data-lightbox="example-1"><img class="example-image" src="lightbox/dist/images/messi.jpg" alt="image-1"  /></a> 
+          <div class="toevoegen">
+        <p>toevoegen</p>
+      </div>
+    </li>
+    <li>
+         <a class="example-image-link" href="lightbox/dist/images/morganInfo.jpg" data-lightbox="example-1"><img class="example-image" src="lightbox/dist/images/morgan.jpg" alt="image-1"  /></a> 
+         <div class="toevoegen">
+        <p>toevoegen</p>
+      </div>
+    </li>
+</ul>
+</div>
+
+
+
+
+
+
+  <script src="lightbox/dist/js/lightbox-plus-jquery.min.js"></script>
+<footer>
+         &copy; Gemaakt door: Wesley van Rooij. Hogeschool Utrecht 
+</footer>
+
+</div>
+
+<script>
+
+
+//Friends
+var follow = $('.huidigeVrienden');
+var unfollow = $('.voorgesteldeVrienden');
+
+if (follow) {
+  $('body').on('click', '.verwijder', function(){
+    //alert("delete")
+    $('.voorgesteldeVrienden').prepend($(this).parent());
+    $(this).attr('class','toevoegen');
+    $(this).text("toevoegen");
+    $(this).css("padding-top", "23px");
+    $(this).css("padding-bottom", "23px");
+  });
+};
+
+
+if (unfollow) {
+  $('body').on('click', '.toevoegen', function(){
+    //alert("delete")
+    $('.huidigeVrienden').prepend($(this).parent());
+    $(this).attr('class','verwijder');
+    $(this).text("verwijder");
+    $(this).css("padding-top", "23px");
+    $(this).css("padding-bottom", "23px");
+  });
+};
+//eidne friends
+  
+
+     $("ul").on("click", "button", function(e) {
+    e.preventDefault();
+    $(this).parent().remove();
+});
+
+</script>
 </body>
 </html>

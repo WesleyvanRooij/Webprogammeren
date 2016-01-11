@@ -1,0 +1,87 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset = "UTF-8">
+	<title>Tijdlijn</title>
+	<link rel="stylesheet" href="css/style.css">
+	<script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
+	<script src="js/script.js"></script>
+	<link rel="stylesheet" type="text/css" href="../css/stylesheet.css">
+
+</head>
+
+<body id="tijdlijn">
+
+
+
+<div class="page">
+<nav> 
+  <ul>
+
+  <li><a href="../functionaliteiten/zoeken.html"> Zoeken</a> </li>
+
+  <li><a href="../functionaliteiten/berichten.html">Berichten </a></li>
+  <li><a href="../functionaliteiten/vriendenlijst.html">Vrienden</a></li>
+  <li><a href="../functionaliteiten/favorieten.html">Favorieten</a> </li>
+  <li><a href="../functionaliteiten/instellingen.html">Instellingen</a></li>
+</ul>
+</nav>
+<img src="../images/panorama.jpg">
+
+		
+<div class="content"> 
+
+<div class="eigenprofiel">
+	<img id="profielfoto" src="../images/profielfoto.jpg">
+	<input id= "bestandKiezen" type="file" onchange="previewFile()"><br>
+
+	<h2>Wesley van Rooij</h2>
+	<h3>5.000 volgers</h3>
+</div>
+
+
+<textarea rows="7" cols="50" placeholder="Deel je fintess voortgang" id="invoer"></textarea>
+<input type="button" id="knop" value="bericht plaatsen">
+
+<ol id="lijst"> 
+<div id="posts">
+  <div class="post1">
+    <li>boter</li>
+  <textarea rows="7" cols="50" placeholder="Reageer iets liefs of motiverends!" id="reageerInvoer"></textarea>
+  <input type="button" id="reageerKnop" value="reageer">
+
+
+  </div>
+    <div class="post2">
+     
+    <li>kaas</li>
+
+     <textarea rows="7" cols="50" placeholder="Reageer iets liefs of motiverends!" id="reageerInvoer"></textarea>
+  <input type="button" id="reageerKnop" value="reageer">
+
+    </div>
+      <div class="post3">
+         
+    <li>eieren</li>
+
+     <textarea rows="7" cols="50" placeholder="Reageer iets liefs of motiverends!" id="reageerInvoer"></textarea>
+  <input type="button" id="reageerKnop" value="reageer">
+
+    </div>
+</div>
+
+
+
+</ol>
+
+<footer>
+		 &copy; Gemaakt door: Wesley van Rooij. Hogeschool Utrecht 
+</footer>
+
+</div>
+
+
+
+
+</body>
+</html>

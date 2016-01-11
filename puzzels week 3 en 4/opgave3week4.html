@@ -1,0 +1,62 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Opgave 3</title>
+
+</head>
+<body>
+<h1>Controleer je lotnummer</h1>
+<form>
+  <table>
+    <tr>
+      <td><label for="txt_lotnummer">Lotnummer:</label></td>
+      <td><input id="txt_lotnummer" name="txt_lotnummer" type="text" value=""></td>
+    </tr>
+    <tr>
+      <td>&nbsp;</td>
+      <td><input type="button" id="knop" value="controleer"></td>
+    </tr>
+    <tr>
+      <td>&nbsp;</td>
+      <td><textarea id="txt_uitkomst" name="txt_uitkomst" type="text" value=""></textarea></td>
+    </tr>
+  </table>
+</form>
+
+
+
+<script>
+  var winnendeLoten = ["123456","234567","345678","098765","876543"];
+
+  var controleerLoten = function(){ 
+    var invoer = document.getElementById("txt_lotnummer").value;
+
+    var gewonnen = false; 
+    for(var i = 0; i < winnendeLoten.length; i++){
+    if (invoer === winnendeLoten[i]){ 
+      gewonnen = true;
+      break;
+      
+    }   
+  }
+  if(gewonnen == true) {
+    document.getElementById("txt_uitkomst").value = "lekker";
+  } else{ document.getElementById("txt_uitkomst").value = "Balen";
+}
+
+
+}
+
+  
+  document.getElementById("knop").onclick = function () {
+    controleerLoten();
+
+
+
+  }
+  //hint: gebruik 'break;' zodra je het winnende lot hebt gevonden in de loop
+</script>
+
+</body>
+</html>

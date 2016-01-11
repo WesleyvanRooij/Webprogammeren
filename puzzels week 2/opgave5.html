@@ -1,42 +1,48 @@
 <!DOCTYPE html>
 <html>
 <head>
-		<title>opgave 5</title>
+	<title>Opgave 5 - Valuta berekenen</title>
+	<style>
+		/* voeg zelf commentaar toe */
+		label, input {display: block;}
+		input[type="button"]{margin-top:20px;}
+		#omgerekend {font-size: 40px;}
+	</style>
 </head>
 <body>
-	<form>
-	<label for="invoer">Voer euro in</label>
+	<!-- Maak nu een formulier en gebruik jouw functie -->
+	<form id="valutaForm" name="valutaForm">
+		<label for="euros">Euros:</label>
+		<input type="number" id="euros" name="euros">
 		
-	<input type="text" id="valuta" name="valuta" placeholder="voer het aantal euro's in VB(20,3)">
+		
+		<label for="valuta">Valuta (dollar, peso, yen of pond typen):</label>
+		<input type="text" id="valuta" name="valuta">
+
+		<input type="button" value="Valuta omrekenen" onclick="valutaBerekenen()" />
+	</form>
+	<p id="omgerekend"> <!-- hier komt het antwoord --> </p>
+
+
+	<script>
+	//number zorgt ervoor dat je alleen een nummer kan intikken.
 	
-
-
-	<input type="button" value="knop" onclick="rekenValuta()"/>
-
-
-	<form>
-
-	<p id="bedrag">
-
-		<script> 
-		var rekenValuta = function(){
-		var valuta = getElementById("valuta").value;
-		var amerikaanseDollars = parseInt(valuta) * 1.08;
-		var mexicaansePeso = parseInt(valuta) * 18.06;
-		var japanseYens =parseInt(valuta) * 132.04;
-		var britsePond = parseInt(valuta) * 0.71;
-
-		document.getElementById("bedrag").innerHTML
-
-
+	var dollar = 1.08;
+	var peso = 18.06;
+	var yen = 132.04;
+	var pond = 0.71;
+	var valutaBerekenen = function(){
 		
+		var euros = document.getElementById('euros').value;
+		var valuta = document.getElementById('valuta').value;
 
-
-
-
-
-
-		};
+		if(valuta == "dollar"){euros = euros * dollar}
+		else if(valuta == "peso"){euros = euros * peso;}
+		else if(valuta == "yen"){euros = euros * yen;}
+		else{euros = euros * pond;}
+        
+        document.getElementById('omgerekend').innerHTML = euros;
+    }
 
 //1.	Schrijf een programma die de euro omzet naar een vreemde valuta. 
 //2.	Maak hiervoor een formulier en schrijf het weg op het scherm (dus geen prompt() en alert())
@@ -47,11 +53,10 @@
 //•	Britse Pond (1 Euro = 0.71 Pond)
 
 
-		
 
 
-
-		
-		</script>
+	</script>
 </body>
 </html>
+
+

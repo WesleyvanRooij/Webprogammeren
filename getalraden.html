@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+		<title>getalraden</title>
+		<style>
+		label, input {display: block;}
+
+
+
+
+		</style>
+
+
+
+
+
+</head>
+<body>
+
+	<form id="getalForm" name="getalForm">
+		<label for="invoer">Getal onder de tien?</label>
+		<input type="text" id="invoer" name="invoer" placeholder="vul een getal in">
+
+		<input type="button" value="controleer" onclick="raadGetal()">
+
+
+
+	<form>
+
+	<p id="goedFout"> <!-- hier komt het antwoord --> </p>
+
+
+
+	<script>
+	var raadGetal = function(){
+		var getal = 8;
+		var invoer = document.getElementById("invoer").value;
+
+		if(invoer == getal){
+			//alert("TOPPERT");
+				document.getElementById("goedFout").innerHTML = "TOPPERT";
+
+
+
+		}
+		else if ( invoer < getal){
+			//alert("Probeer het nog eens, je zat te laag");
+			document.getElementById("goedFout").innerHTML = "Probeer het nog eens, je zat te laag";
+
+		}
+
+		
+		
+		else {
+			//alert("Probeer het nog eens, je zat te hoog");
+			document.getElementById("goedFout").innerHTML = "Probeer het nog eens, je zat te hoog";
+		}
+
+	}
+
+
+
+
+
+
+
+
+
+
+
+	</script>
+
+</body>
+
+</html>

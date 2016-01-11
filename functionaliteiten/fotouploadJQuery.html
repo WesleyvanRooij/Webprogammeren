@@ -1,0 +1,93 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Profiel foto aanpassen</title>
+<script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
+<script>
+//bron(uit 2013): http://blog.teamtreehouse.com/reading-files-using-the-html5-filereader-api 
+$(document).ready(function() {
+    $(':file').change(function () {    
+        if(this.files[0]) {
+            var reader = new FileReader();
+            reader.onload = imageIsLoaded;
+            reader.readAsDataURL(this.files[0]);
+        }
+    });
+    function imageIsLoaded(e) {
+        $('#myImg').attr('src', e.target.result);
+    };
+
+    $("#knop").on("click", function(){
+    toevoegen();
+
+    });
+
+    $("#invoer").on("keypress", function(){
+        if(event.keyCode == 13){
+            toevoegen();
+        }
+
+
+    });
+
+    var toevoegen = function(){
+        var invoer = $("#invoer").val();
+        var afbeelding = $('#myImg').parent().html();
+
+
+
+        var uitvoer = '<div class="bericht">' + afbeelding  +invoer + '</div>';
+        $('#tijdlijn').prepend(uitvoer);
+        $("#invoer").val('');
+
+
+
+    };
+
+
+
+
+
+
+});
+
+
+</script>
+<style>
+    .rounded{border-radius: 1000px;}
+    input[type="file"]{width:110px;}
+    .bericht{
+        background-color: #ccc;
+        height: 84px;
+        width:400px;
+        border-radius: 10px;
+        margin-top: 20px;
+
+    };
+
+    img{
+        margin: 5px;
+        vertical-align: middle;
+        max-width: 10px;
+        max-height: 10px;
+
+    }
+</style>
+</head>
+<body>
+<div id="fileDisplayArea">
+    <img id="myImg" src="../images/blanco.png" alt="your image" class="rounded" />
+</div>
+<input type="file" id="fileInput" />
+
+
+<input type="text" id="invoer" placeholder="tekst invoeren">
+<input type="button" id="knop" value="toevoegen">
+
+<div id="posts">
+<!-- hier komen berichten -->
+</div>
+
+</body>
+</html>

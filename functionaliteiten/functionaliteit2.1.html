@@ -1,6 +1,10 @@
 <!DOCTYPE html>
 <html>
 <head>
+	<meta charset="UTF-8">
+	<meta name="robots" content="noindex, nofollow">
+	<meta name="author" content="Wesley van Rooij">
+	<meta name="description" content="HU schoolopdracht webvaardigheden">
 		<title>Functionaliteit 2.1</title>
 </head>
 <body>
@@ -17,7 +21,7 @@
 		<input type="password" id="bevestigwachtwoord" name="bevestigwachtwoord" placeholder="bevestig uw wachtwoord">
 
 		<input type="button" value="Maak account aan" onclick="nieuwAccountScherm()">
-<form>
+</form>
 
 
 
@@ -43,13 +47,46 @@ var nieuwAccountScherm = function(){
 
 if (echtenaam === "" && achternaam === "" && gebruikersnaam === "" && wachtwoord === "" && bevestigwachtwoord === "" && foto === "") { document.getElementById("fout").innerHTML ="U heeft nog niks ingevuld";
 	}
+
+else if (echtenaam === "" && achternaam === achternaam && gebruikersnaam === gebruikersnaam && wachtwoord === wachtwoord && bevestigwachtwoord === bevestigwachtwoord && foto === foto) { document.getElementById("fout").innerHTML ="U heeft nog geen naam ingevuld";
+	}
+
+else if (echtenaam === "" && achternaam === achternaam && gebruikersnaam === "" && wachtwoord === "" && bevestigwachtwoord === "" && foto === "") { document.getElementById("fout").innerHTML ="Eikel";
+	}
+
+
+else if (echtenaam === echtenaam && achternaam === "" && gebruikersnaam === "" && wachtwoord === "" && bevestigwachtwoord === "" && foto === "") { document.getElementById("fout").innerHTML ="U heeft nog geen achternaam, gebruikersnaam, wachtwoord en foto gekozen.";
+	}
+
+
+else if (echtenaam === echtenaam && achternaam === achternaam && gebruikersnaam === "" && wachtwoord === "" && bevestigwachtwoord === "" && foto === "") { document.getElementById("fout").innerHTML ="U heeft nog geen gebruikersnaam, wachtwoord, en foto gekozen.";
+	}
+
+
+else if (echtenaam === echtenaam && achternaam === achternaam && gebruikersnaam === gebruikersnaam && wachtwoord === ""&& bevestigwachtwoord === "" && foto === "") { document.getElementById("fout").innerHTML ="U moet nog een wachtwoord en foto kiezen.";
+	}
+else if (echtenaam === echtenaam && achternaam === achternaam && gebruikersnaam === gebruikersnaam && wachtwoord === wachtwoord && bevestigwachtwoord === "" && foto === "") { document.getElementById("fout").innerHTML ="U moet het wachtwoord nog bevestigen en een foto kiezen.";
+	}
+
+
+else if (echtenaam === echtenaam && achternaam === achternaam && gebruikersnaam === gebruikersnaam && wachtwoord === wachtwoord && bevestigwachtwoord === bevestigwachtwoord && foto === "") { document.getElementById("fout").innerHTML ="U heeft nog geen foto gekozen.";
+	}
+
+else if (echtenaam === echtenaam && achternaam === achternaam && gebruikersnaam === gebruikersnaam && wachtwoord === "" && bevestigwachtwoord === "" && foto === "") { document.getElementById("fout").innerHTML ="U nog heeft nog geen wachtwoord, en foto gekozen.";
+	}
+
+else if (echtenaam === "" && achternaam === achternaam && gebruikersnaam === "" && wachtwoord === "" && bevestigwachtwoord === "" && foto === "") { document.getElementById("fout").innerHTML ="U nog geen voornaam, gebruikersnaam, wachtwoord en foto gekozen.";
+	}
+
+else if (echtenaam === "" && achternaam === "" && gebruikersnaam === gebruikersnaam && wachtwoord === "" && bevestigwachtwoord === "" && foto === "") { document.getElementById("fout").innerHTML ="U nog geen voornaam, achternaam, wachtwoord en foto gekozen.";
+	}
+else if (echtenaam === "" && achternaam === "" && gebruikersnaam === "" && wachtwoord === wachtwoord && bevestigwachtwoord === "" && foto === "") { document.getElementById("fout").innerHTML ="U nog geen voornaam, achternaam, gebruikersnaam, en foto gekozen.";
+	}
+else if (echtenaam === "" && achternaam === "" && gebruikersnaam === "" && wachtwoord === "" && bevestigwachtwoord === "" && foto === foto) { document.getElementById("fout").innerHTML ="U nog geen voornaam, achternaam, gebruikersnaam, en wachtwoord gekozen.";
+	}
 else {window.location.href = "../functionaliteiten/functionaliteit1.4.html" ;
 	}
 
-//else if (gebruikersnaam === "" && wachtwoord === "" ) { document.getElementById("fout").innerHTML ="U heeft nog geen wachtwoord ingevuld";
-	
-//else { document.getElementById("fout").innerHTML ="U heeft nog geen gebruikersnaam ingevuld";
-	
 
 }
 

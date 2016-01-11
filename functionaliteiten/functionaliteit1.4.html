@@ -5,6 +5,7 @@
 	<meta name="robots" content="noindex, nofollow">
 	<meta name="author" content="Wesley van Rooij">
 	<meta name="description" content="HU schoolopdracht webvaardigheden">
+  <script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
 		<title>functionaliteit 1.4</title>
 </head>
 
@@ -12,55 +13,156 @@
 
 <body id="tijdlijn">
 
+
+
 <div class="page">
+<nav> 
+  <ul>
 
-<div class="topMenu">
-	<p> Welkom, deel hier uw trainingschema, voortgang en maak vrienden!</p>
-</div>
+  <li><a href="../functionaliteiten/zoeken.html"> Zoeken</a> </li>
 
-
-<div class="sidebar">
-	
-<ul>
-
-		<div class="sidebarZoeken">
-			<li><a href="../functionaliteiten/zoeken.html"> Zoeken</a> </li>
-</div>
-
-		<div class="sidebarBerichten">
-		<li><a href="../functionaliteiten/berichten.html">Berichten </a></li>
-</div>
-
-		<div class="sidebarVrienden">
-			<li><a href="../functionaliteiten/vriendenlijst.html">Vrienden</a></li>
-</div>
-
-		<div class="sidebarFavorieten">
-			<li><a href="../functionaliteiten/favorieten.html">Favorieten</a> </li>
-</div>
-
-		<div class="sidebarInstellingen">
-			<li><a href="../functionaliteiten/instellingen.html">Instellingen</a></li>
-</div>
-
+  <li><a href="../functionaliteiten/berichten.html">Berichten </a></li>
+  <li><a href="../functionaliteiten/vriendenlijst.html">Vrienden</a></li>
+  <li><a href="../functionaliteiten/favorieten.html">Favorieten</a> </li>
+  <li><a href="../functionaliteiten/instellingen.html">Instellingen</a></li>
 </ul>
+</nav>
+<img src="../images/panorama.jpg">
+
+		
+<div class="content"> 
+
+<div class="eigenprofiel">
+	<img id="profielfoto" src="../images/profielfoto.jpg">
+	<input id= "bestandKiezen" type="file" onchange="previewFile()"><br>
+
+	<h2>Wesley van Rooij</h2>
+	<h3>5.000 volgers</h3>
+</div>
+
+
+<textarea rows="7" cols="50" placeholder="Deel je fintess voortgang" id="invoer"></textarea>
+<input type="button" id="knop" value="bericht plaatsen">
+
+
+
+<div id="menu">
+    <li>boter</li>
+    <li>kaas</li>
+    <li>Net superveel gesport Net superveel gesport Net superveel gesportNet superveel gesport Net superveel gesportvNet superveel gesportNet superveel gesportNet superveel gesportNet superveel gesportNet superveel gesportNet superveel gesportNet superveel gesportNet superveel gesportNet superveel gesportNet superveel gesportNet superveel gesportNet superveel gesportNet superveel gesportNet superveel gesportNet superveel gesportNet superveel gesportNet superveel gesportNet superveel gesportNet superveel gesportNet superveel gesportNet superveel gesportNet superveel gesportNet superveel gesportNet superveel gesportNet superveel gesportNet superveel gesportNet superveel gesportNet superveel gesportNet superveel gesportNet superveel gesportNet superveel gesportNet superveel gesportNet superveel gesportNet superveel gesportNet superveel gesportNet superveel gesportNet superveel gesportNet superveel gesportNet superveel gesportNet superveel gesportNet superveel gesportNet superveel gesportNet superveel gesportNet superveel gesportNet superveel gesportNet superveel gesportNet superveel gesportNet superveel gesportNet superveel gesportNet superveel gesportNet superveel gesportNet superveel gesportNet superveel gesportNet superveel gesportNet superveel gesportNet superveel gesportNet superveel gesportNet superveel gesportNet superveel gesportNet superveel gesportNet superveel gesportNet superveel gesportNet superveel gesportNet superveel gesportNet superveel gesportNet superveel gesportNet superveel gesportNet superveel gesportNet superveel gesportNet superveel gesportNet superveel gesportNet superveel gesportNet superveel gesportNet superveel gesportNet superveel gesportNet superveel gesport</li>
 
 </div>
 
-<div class="rigthPart">
+<div id="posts">
+  <div class="post1">
+    <li>boter</li>
+  <textarea rows="7" cols="50" placeholder="Reageer iets liefs of motiverends!" id="reageerInvoer"></textarea>
+  <input type="button" id="reageerKnop" value="reageer">
 
+
+  </div>
+    <div class="post2">
+     
+    <li>kaas</li>
+
+     <textarea rows="7" cols="50" placeholder="Reageer iets liefs of motiverends!" id="reageerInvoer"></textarea>
+  <input type="button" id="reageerKnop" value="reageer">
+
+    </div>
+      <div class="post3">
+         
+    <li>eieren</li>
+
+     <textarea rows="7" cols="50" placeholder="Reageer iets liefs of motiverends!" id="reageerInvoer"></textarea>
+  <input type="button" id="reageerKnop" value="reageer">
+
+    </div>
 </div>
-
-
-
-
-
-
 
 <footer>
 		 &copy; Gemaakt door: Wesley van Rooij. Hogeschool Utrecht 
 </footer>
+
 </div>
+
+
+
+
+
+
+<script>
+
+$(document).ready(function(){
+
+  $('#knop').on('click', function(){
+    var invoer = $('#invoer').val();
+    $('#lijst').append('<li class="item"><span>'+invoer+'</span><img class="edit" src="images/edit.png" height="16" width="16"><img class="delete" src="images/delete.png" height="16" width="16"></li>');  
+    $('#invoer').val('');
+  });
+
+  $('body').on('click', '.item', function(){
+    //alert("Je hebt op" + $(this).html() + "geklikt");
+
+  });
+  $('body').on('click', '.delete', function(){
+  //alert("je hebt op delete geklikt");
+  $(this).parent().remove();
+
+  });
+
+  $('body').on('click', '.edit', function(){
+  //alert("je hebt op edit geklikt");
+  var edit = prompt("wilt u het bericht wijzigen?", $(this).prev().text());
+  //alert(edit);
+  $(this).prev().text(edit);
+
+
+  });
+
+
+
+
+});
+
+
+    document.getElementById('knop').onclick = function() {
+        toevoegen();
+    };
+
+   // document.getElementById('invoer').onkeyup = function(event) {
+        //if(event.keyCode == 13) {
+            //toevoegen();
+        //}
+
+    
+
+  
+    
+ function previewFile(){
+       var preview = document.getElementById('profielfoto'); //selects the query named img
+       var file    = document.querySelector('input[type=file]').files[0]; //sames as here
+       var reader  = new FileReader();
+
+       reader.onloadend = function () {
+           preview.src = reader.result;
+       }
+
+       if (file) {
+           reader.readAsDataURL(file); //reads the data as a URL
+       } else {
+           preview.src = "";
+       }
+  }
+ 
+
+
+</script>
+
+
+
+
+
+		
 
 </body>
 

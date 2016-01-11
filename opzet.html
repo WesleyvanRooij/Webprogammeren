@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+		<title>Opzet</title>
+</head>
+<body>
+	      <div class="grid row-fluid">
+          <div>
+            <span class="span1">                
+            <input type="checkbox" class="regular-checkbox" id="Header" />
+            <label for="Header"></label>                
+            </span> 
+            <span class="span1"> <img class="img-polaroid" src="http://placehold.it/140x140"></span> 
+           </div>
+
+
+             <div>
+            <span class="span1">                
+            <input type="checkbox" class="regular-checkbox" id="Header" />
+            <label for="Header"></label>                
+            </span> 
+            <span class="span1"> <img class="img-polaroid" src="http://placehold.it/140x140"></span> 
+           </div>
+           </div>
+
+
+           <div class="span7" style="border:1px black" id="separate">
+
+                <ul class="thumbnails bootstrap-examples pre-scrollable">
+                    <li class="span2">
+                      <a href="#">
+                        //image shold add here
+                      </a>
+                      </li>
+                     </ul>
+         </div>
+		<script> 
+		
+
+      $(function () {
+          $('input[type="checkbox"]').click(function () {
+              AddToCart(this);
+          });
+      });
+
+      function AddToCart(obj) {
+          var $this = $(obj).closest('div');
+          var img = $this.find('img');
+          $('#separate').append(img);
+      }
+
+		
+		</script> 
+</body>
+</html>

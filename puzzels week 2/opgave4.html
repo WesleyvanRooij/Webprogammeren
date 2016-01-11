@@ -1,7 +1,13 @@
 <!DOCTYPE html>
 <html>
 <head>
-		<title>Opgave 1</title>
+		<title>Opgave 4 </title>
+		<style>
+	/* css commentaar */
+	label, input { display: block;}
+	
+	input[type="button"]{margin-top:20px;}
+	</style>
 </head>
 <body>
 	<form>
@@ -14,7 +20,7 @@
 	<input type="button" value="knop" onclick="vergelijkWoorden()"/>
 
 
-	<form>
+	</form>
 
 	<p id="melding">
 
@@ -27,6 +33,9 @@
 	var woord2 = document.getElementById("woord2").value;
 
 	if(woord1.length > woord2.length) {document.getElementById("melding").innerHTML = "woord 1 is langer en bevat " + woord1.length + " letters." ;}
+
+	else if (woord1.length === woord2.length) {document.getElementById("melding").innerHTML = "woorden zijn evenlang " + woord1.length + " letters." ;}
+
 
 
 

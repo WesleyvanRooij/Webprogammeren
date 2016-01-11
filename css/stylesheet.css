@@ -1,0 +1,380 @@
+#echtenaam, #achternaam, #gebruikersnaam, #wachtwoord, #bevestigwachtwoord, #button{display: block;
+	margin: 0 auto;
+	margin-top: 20px;
+	width: 280px;
+	height: 50px;
+	margin-top: 20px;
+
+	}
+
+
+
+
+body {
+	background-image: url(../images/achtergrond.jpg);
+	background-repeat: none;
+	background-attachment: fixed;
+}
+
+#accountAanmaken{
+	background-image: url(../images/achtergrond6.jpg);
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+}
+
+h1 {
+	font-size: 45pt;
+	font-family: arial;
+	text-align: center;
+}
+
+
+p, a {
+	text-align: center;
+	
+}
+
+#fout, #wachtwoordCheckFout, #wachtwoordFout, #gebruikersnaamFout, #achternaamFout, #echtenaamFout {
+		text-align: center;
+		color: #D8000C;
+    background-color: #FFBABA;
+    display: block;
+    
+   
+    
+   
+
+}
+
+#inlogForm {
+    
+    width: 160px;
+    height: 270px;
+    background-color: grey;
+    padding: 10px 10px 10px 10px;
+    width: 15%;
+  	margin-top: 100px;
+    border-radius: 25px;
+    margin: 0 auto;
+ }
+
+
+
+#button { 
+		margin-top: 10px;
+		width: 100%;
+		height: 50px;
+		border-radius: 25px;
+		font-size: 15pt;
+		
+}
+
+#nieuwAccountForm {
+    width: 160px;
+    height: 770px;
+    background-color: grey;
+    padding: 10px 10px 10px 10px;
+    width: 15%;
+  	margin-top: 40px;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 25px;
+   
+
+ }
+    
+#tijdlijn, #vriendenlijst, #berichtenpagina {
+		background-image: url(../images/tijdlijnachtergrond1.jpg);
+
+		background-repeat: no-repeat;
+		background-attachment: fixed;
+    
+
+}
+
+
+.page {
+		max-width: 1920px;
+       min-width: 720px;
+       max-height: 1200px;
+       min-height: 900px;
+       margin-left: 300px;
+       padding: 20px;
+       margin-right: 340px;
+       
+
+    }
+
+
+
+           
+nav ul  { 
+            clear: both;
+             padding: 15px;
+             margin: 0px auto 0px auto;
+             border-top: 1px solid #000;
+             border-bottom: 1px solid #000;
+             border-left: 1px solid #000;
+             border-right: 1px solid #000;
+             text-align: center;
+             text-transform: uppercase;
+             font-size: 15pt;
+             font-color: white;
+             background-color:#3a5795;
+
+          }
+
+nav li { display: inline;
+          margin: 0px 3px; 
+        }
+
+nav li a { color: white;}
+
+
+
+
+
+
+
+
+#lijst li  {
+    
+        margin-top: 10px;
+         border-top: 1px solid #000;
+        border-bottom: 1px solid #000;
+        border-left: 1px solid #000;
+        border-right: 1px solid #000;
+        list-style-type: none;
+        
+
+}
+
+#posts li  {
+    
+        margin-top: 10px;
+         border-top: 1px solid #000;
+        border-bottom: 1px solid #000;
+        border-left: 1px solid #000;
+        border-right: 1px solid #000;
+        
+}
+
+#postsReactie {
+    background-color: lightblue;
+    margin-top: 40px;
+    
+    margin-left: 400px;
+}
+
+
+
+
+
+
+
+
+.eigenprofiel {
+                margin: 0 auto;
+                text-align: center;
+                border-radius: 20px;
+
+                }
+
+#profielfoto {
+    margin-top:50px;
+    border-radius: 20px;
+    min-height: 100px;
+    min-width: 100px; 
+    max-height: 250px;
+    max-width: 250px;
+}
+
+footer{
+		padding: 15px;
+		border-top: 1px solid #000;
+		border-bottom: 1px solid #000;
+		border-left: 1px solid #000;
+		border-right: 1px solid #000;
+		text-align: center;
+		background-color: #3a5795;
+        margin: 0 auto;
+             
+		clear: both;
+		
+            }
+
+#invoer{
+    display: block;
+     margin: 0 auto;
+}
+
+#knop, #reageerKnop, #reageerInvoer{
+    margin: 0 auto;
+    margin-top: 10px;
+    display: block;
+}
+
+#bestandKiezen {
+display: block;
+
+margin: 0 auto;
+}
+
+
+.reactie {
+    display: block;
+     margin: 0 auto;
+     margin-top: 10px;
+}
+
+.waardering {
+    float: right;
+}
+
+.content {
+    margin-left: 550px;
+}
+
+.huidigeVrienden {
+    
+    
+   text-align: center;
+}
+
+.voorgesteldeVrienden{
+    
+    text-align: center;
+}
+
+
+
+.huidigeVrienden li , .voorgesteldeVrienden li {
+    list-style-type: none;
+
+}
+
+.huidigeVrienden img , .voorgesteldeVrienden img {
+    height: 200px;
+    width: 200px;
+    margin-top: 10px;
+}
+
+.huidigeVrienden button , .voorgesteldeVrienden button {
+    display: block;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    margin: 0 auto;
+}
+.toevoegen, .verwijder {
+    background-color: #3a5795;
+    text-align: center;
+   margin: 0 auto;
+     width: 200px;
+    margin-top: 10px;
+    padding: 5px;
+    border-radius: 17px;
+    border-style: outset;
+    font-family: Arial;
+    font-size: 18px;
+}
+
+.vriendjes, .bijnavriendjes {
+    text-align: center;
+}
+
+.chatvrienden img {
+    
+    border-radius: 40%;
+ 
+    
+    height: 70px;
+    width: 70px;
+    float: left;
+   
+}
+.chatvrienden a { color: white;}
+.chatvrienden {
+        width: 208px;
+    height: 1880px;
+    float: left;
+    background-color: #3a5795;
+
+}
+
+#chatscherm {
+
+    width: 600px;
+    height: 600px;
+    background-color: #7DBBBA;
+    border: 1px solid #C4C4C4;
+    border-radius: 5px;
+    margin-left: 350px;
+    overflow-y: scroll;
+    margin-top: 0px;
+
+}
+
+.schrijfBericht {
+    margin-top: 10px;
+          width: 600px;
+    height: 170px;
+    background-color: #3a5795;
+    border-radius: 0px 0px 5px 5px;
+    margin-left: 350px;
+    margin-bottom: 20px;
+    border: 1px solid #c4c4c4;
+    border-radius: 5px 5px 5px 5px;
+
+}
+.naampie {
+    margin-left: 350px;
+
+}
+
+.eersteBericht, .derdeBericht , .vijfdeBericht {
+    float: left;
+    background-color: #FFF;
+    width: 300px;
+    height: auto;
+    padding: 5px;
+    min-height: 20px;
+    border-radius: 5px;
+    border-bottom-left-radius: 0px;
+    margin-top: 10px;
+    margin-left: 20px;
+    box-shadow: 1px 1px 1px 1px;
+}
+
+.tweedeBericht, .vierdeBericht {
+    float: right;
+    background-color: #C0E6F3;
+    width: 300px;
+    height: auto;
+    min-height: 20px;
+    padding: 5px;
+    border-radius: 5px;
+    border-bottom-right-radius: 0px;
+    margin-top: 10px;
+    margin-right: 20px;
+    box-shadow: 1px 1px 1px 1px;
+}
+
+.chatsend  {   height: 30px;
+    cursor: pointer;
+    width: 90px;
+    background-color: #FFFFFF;
+    font-size: 15px;
+    font-family: Verdana , Arial, Helvetica, sans-serif;
+    color: black;
+    border: 1px solid #000000;
+    border-radius: 5px 5px 5px 5px;
+}
+
+textarea.chattekst {
+    margin-top: 20px;
+    margin-left: 5px;
+}
+
+#berichtfoto{
+    max-width: 10px;
+}
