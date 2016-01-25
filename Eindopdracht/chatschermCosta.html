@@ -8,7 +8,7 @@
 	<link rel="stylesheet" type="text/css" href="../css/stylesheet.css">
 	<script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
 	<link rel="stylesheet" href="lightbox/dist/css/lightbox.min.css">
-		<title>Berichten van Persie</title>
+		<title>Chatscherm- Diego Costa</title>
 </head>
 
 
@@ -17,11 +17,13 @@
 <div class="page">
 <nav> 
   <ul>
- <li><a href="../functionaliteiten/tijdlijn.html"> Home</a> </li>
+     <li><a href="../Eindopdracht/tijdlijn.html"> Home</a> </li>
 
-  <li><a href="../functionaliteiten/berichten.html">Berichten </a></li>
-  <li><a href="../functionaliteiten/vriendenlijst.html">Vrienden</a></li>
-    <li><a href="../functionaliteiten/index.html">Uitloggen</a></li>
+
+  <li><a href="../Eindopdracht/berichten.html">Berichten </a></li>
+  <li><a href="../Eindopdracht/vriendenlijst.html">Vrienden</a></li>
+
+  <li><a href="../Eindopdracht/index.html">Uitloggen</a></li>
 
 </ul>
 </nav>
@@ -30,10 +32,11 @@
 <div class="chatvrienden">
 
 <div class="chatschermKuyt">
-		<a href="../functionaliteiten/chatschermKuyt.html"><img src="../images/kuyt.jpg">
-		 <h2> Dirk <br> Kuyt </h2>
-		</a>
+    <a href="../functionaliteiten/berichten.html"><img src="../images/kuyt.jpg">
+     <h2> Dirk <br> Kuyt </h2>
+    </a>
 </div>
+
 
 
 <div class="chatschermVrouw">
@@ -58,20 +61,20 @@
 </div>
 
 
-<h2 class="naampie"> Chatscherm- van Persie </h2>
+<h2 class="naampie"> Chatscherm- Diego Costa </h2>
 
 <div id="chatscherm">
 	<div id="berichten">
-		<div class="eersteBericht"> <p> Wes, hoesty? <a class="example-image-link" href="lightbox/dist/images/vanPersieInfo.jpg" data-lightbox="example-1"><img class="example-image" src="lightbox/dist/images/vanPersie.jpg" alt="image-1"  /></a> </p> </div>
+		<div class="eersteBericht"> <p> Wesley, alles goed? <a class="example-image-link" href="lightbox/dist/images/costaInfo.jpg" data-lightbox="example-1"><img class="example-image" src="lightbox/dist/images/costa.jpg" alt="image-1"  /></a></p> </div>
 
-		<div class="tweedeBericht"> <p> Kerelvent, prima. Met jou?</p> </div>
+		<div class="tweedeBericht"> <img src="../images/profielfoto2.jpg">  <p> Kerelventn gaat lekker met jou? </p> </div>
 
-		<div class="derdeBericht"> <p> Ja ook goed. Lekker getraind? <a class="example-image-link" href="lightbox/dist/images/vanPersieInfo.jpg" data-lightbox="example-1"><img class="example-image" src="lightbox/dist/images/vanPersie.jpg" alt="image-1"  /></a>  </p> </div>
+		<div class="derdeBericht"> <p> Ja ook. Heb net weer gesport. jij ook lekker getraind? <a class="example-image-link" href="lightbox/dist/images/costaInfo.jpg" data-lightbox="example-1"><img class="example-image" src="lightbox/dist/images/costa.jpg" alt="image-1"  /></a> </p> </div>
 
-		<div class="vierdeBericht"> <p> Best, jij ook? </p> </div>
+		<div class="vierdeBericht">  <img src="../images/profielfoto2.jpg">  <p> goed bezig, ja ik ook man </p> </div>
 
 		<div class="vijfdeBericht"> 
-			<p> ook goed <a class="example-image-link" href="lightbox/dist/images/vanPersieInfo.jpg" data-lightbox="example-1"><img class="example-image" src="lightbox/dist/images/vanPersie.jpg" alt="image-1"  /></a> </p> </div>
+			<p> lekker! <a class="example-image-link" href="lightbox/dist/images/costaInfo.jpg" data-lightbox="example-1"><img class="example-image" src="lightbox/dist/images/costa.jpg" alt="image-1"  /></a> </p> </div>
 
 		
 	</div>
@@ -85,12 +88,12 @@
 <input type="button" id="MessageSent" value="bericht plaatsen" onclick="messageToevoegen()">
 
 <img src id="berichtFoto" onchange="previewMessageFoto">
-
+<p id="berichtenfout"> </p>
 </form>
   <script src="lightbox/dist/js/lightbox-plus-jquery.min.js"></script>
 <script>
 
-//messages
+//berichten
 var BerichtPlaatsen = document.getElementById('berichtenpagina');
 
   if(BerichtPlaatsen){ 
@@ -120,11 +123,11 @@ function previewMessageFoto(){
   var textMessage = $('#berichtSturen').val();
   var berichtFoto = $('#berichtFoto').attr('src');
 
-  if (textMessage == "") {
+  if (textMessage === "" || berichtFoto === "") {
     $('#berichtSturen').css("borderColor", "red");
-    document.getElementById('berichtSturen').placeholder = "Vergeet niet iets te schrijven..."
+     document.getElementById('berichtenfout').innerHTML = "Vergeet niet iets te schrijven en een foto te sturen "
   }else{
-    $('#berichten').append('<div class="vierdeBericht"><a href="' + berichtFoto +'"data-lightbox="example-1"><img class="example-image" src="'+berichtFoto+'" alt="image-1"  /></a><div class="textSaying">'+textMessage+'</div></div>');
+    $('#berichten').append('<div class="vierdeBericht">' + '<img src="../images/profielfoto2.jpg">' + '<a href="' + berichtFoto +'"data-lightbox="example-1"><img class="example-image" src="'+berichtFoto+'" alt="image-1"  /></a><div class="textSaying">'+ textMessage+'</div></div>');
 
   $('#wberichtSturen').val('');
     $('#berichtFoto').attr('src', '');
@@ -132,7 +135,7 @@ function previewMessageFoto(){
 
   }
 }
-//einde messages
+//einde berichten
 
  
 

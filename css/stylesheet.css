@@ -46,6 +46,16 @@ p, a {
 
 }
 
+#foutmelding {
+  margin-left: 520px;
+   text-align: center;
+        color: #D8000C;
+    background-color: #FFBABA;
+   display: inline;
+    
+
+}
+
 #inlogForm {
     
     width: 160px;
@@ -292,7 +302,10 @@ margin: 0 auto;
     float: left;
    
 }
-.chatvrienden a { color: white;}
+.chatvrienden a { 
+  color: white;
+}
+
 .chatvrienden {
         width: 208px;
     height: 1880px;
@@ -378,3 +391,39 @@ textarea.chattekst {
 #berichtfoto{
     max-width: 10px;
 }
+
+.Profielfototijdlijn{
+  max-width: 250px;
+  max-height: 250px;
+  margin left: 600px;
+}
+
+#profielfoto img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto 
+  }
+
+
+.profielgegevens img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto 
+  }
+
+.profielgegevens h2, .profielgegevens h3 {
+    text-align: center;
+  }
+h3 { 
+  text-align: center;
+}
+
+#berichtenfout { 
+margin-top: 50px;
+   text-align: center;
+        color: #D8000C;
+    background-color: #FFBABA;
+  
+    
+}
+

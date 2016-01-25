@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<meta name="robots" content="noindex, nofollow">
+	<meta name="author" content="Wesley van Rooij">
+	<meta name="description" content="HU schoolopdracht webvaardigheden">
+		<title>registreerpagina</title>
+</head>
+
+
+<link rel="stylesheet" type="text/css" href="../css/stylesheet.css">
+
+
+<body id="accountAanmaken">
+
+
+
+<form id="nieuwAccountForm" name="nieuwAccountForm">
+
+		
+		<img id= "voorvertoningAfbeelding" src="../images/foto.jpe" height="200" alt="Image preview..." ><br>
+		<input type="file" onchange="previewFile()"><br>
+
+		<label for="invoer">Maak hier een account aan!</label>
+
+		
+		<input type="text" id="echtenaam" name="echtenaam" placeholder="Wat is uw naam?">
+		<p id="echtenaamFout"></p>
+
+		<input type="text" id="achternaam" name="achternaam" placeholder="Wat is uw achternaam?">
+		<p id="achternaamFout"></p>
+		
+		<input type="text" id="gebruikersnaam" name="gebruikersnaam" placeholder="voer uw gebruikersnaam in">
+		<p id="gebruikersnaamFout"></p>
+
+		<input type="password" id="wachtwoord" name="wachtwoord" placeholder="voer uw wachtwoord in">
+		<p id="wachtwoordFout"></p>
+
+		<input type="password" id="bevestigwachtwoord" name="bevestigwachtwoord" placeholder="bevestig uw wachtwoord">
+		<p id="wachtwoordCheckFout"></p>
+
+		<input id="button"type="button" value="Maak account aan" onclick="nieuwAccountScherm()">
+		<p id="fout"></p>
+		
+</form>
+		
+
+
+
+
+	
+		<script> 
+
+//registreerpagina
+
+		
+		var nieuwAccountScherm = function(){
+		var echtenaam = document.getElementById("echtenaam").value;
+		var achternaam = document.getElementById("achternaam").value;
+		var gebruikersnaam = document.getElementById("gebruikersnaam").value;
+		var wachtwoord = document.getElementById("wachtwoord").value;
+		var bevestigwachtwoord = document.getElementById("bevestigwachtwoord").value;
+
+
+
+
+
+
+	if(echtenaam === "" ) { 
+		document.getElementById("fout").innerHTML ="U heeft nog geen naam ingevuld";
+	}else if (achternaam === "" ){
+	 document.getElementById("fout").innerHTML ="U heeft nog geen achternaam ingevuld.";
+	} else if (gebruikersnaam === "" || gebruikersnaam === "Hekman" || gebruikersnaam ==="Koning"|| gebruikersnaam ==="ErikHekman"||gebruikersnaam === "ThijsWaardenburg"|| gebruikersnaam ==="Ronald" || gebruikersnaam ==="RonaldVanEssen" ||gebruikersnaam === "Wesley") {
+		 document.getElementById("fout").innerHTML ="Gebruikersnaam is niet ingevuld of al in gebruik";
+	}else if(wachtwoord === "" ) {
+	 document.getElementById("fout").innerHTML ="Wachtwoord is nog niet ingevuld.";
+	} else if (bevestigwachtwoord === "" ) { 
+		document.getElementById("fout").innerHTML ="U heeft het wachtwoord nog niet bevestigd.";
+	} else if (wachtwoord !== bevestigwachtwoord){
+		document.getElementById("fout").innerHTML ="De wachtwoorden komen niet overeen";
+	} else  {
+		window.location.href = "../Eindopdracht/tijdlijn.html";
+	}
+
+
+
+
+};
+//foto upload
+	function previewFile(){
+       var preview = document.querySelector('img'); //selects the query named img
+       var file    = document.querySelector('input[type=file]').files[0]; //sames as here
+       var reader  = new FileReader();
+
+       reader.onloadend = function () {
+           preview.src = reader.result;
+       }
+
+       if (file) {
+           reader.readAsDataURL(file); //reads the data as a URL
+       } else {
+           preview.src = "";
+       }
+  }
+//einde foto upload
+  //einde van de registreerpagina
+
+
+
+		
+
+
+
+		
+		</script>
+
+</body>
+
+</html>
